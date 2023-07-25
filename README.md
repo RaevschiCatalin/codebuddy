@@ -1,1 +1,2 @@
-# Got no bitches? We've got you covered
+# Coding Buddy
+## Visit the website https://codingbuddy.vercel.app/
