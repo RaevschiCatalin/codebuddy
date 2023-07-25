@@ -1,16 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { auth } from "@firebase";
+import { onAuthStateChanged } from "@firebase/auth";
 
 const Nav = () => {
-  const isUserLoggedIn: boolean = false; // Replace this with your actual logic for checking if the user is logged in
+  const [isUserLoggedIn, setIsLogged] = useState(!!auth.name);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
-  const handleSignIn = () => {
-    signIn(); // Call the signIn function when the button is clicked
-  };
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsLogged(true);
+      } else {
+        setIsLogged(false);
+      }
+    });
+  });
 
   return (
     <nav className="flex flex-between w-full mb-16 pt-3">
@@ -42,15 +49,22 @@ const Nav = () => {
             </Link>
           </div>
         ) : (
-          <>
+          <div className="flex gap-3 md:gap-5">
             <Link href="/signin">
               <button type="button" className="black_btn">
-                Sign Up
+                Login
               </button>
             </Link>
-          </>
+
+            <Link href="/signup">
+              <button type="button" className="black_btn">
+                Register
+              </button>
+            </Link>
+          </div>
         )}
       </div>
+
       {/* mobile */}
       <div className="sm:hidden flex gap-3 relative">
         {isUserLoggedIn ? (
@@ -86,23 +100,12 @@ const Nav = () => {
                 >
                   Find a buddy
                 </Link>
-
-                <button
-                  type="button"
-                  className="outline_btn  dropdown_link"
-                  onClick={() => {
-                    setToggleDropdown(false);
-                    signOut();
-                  }}
-                >
-                  Sign Out
-                </button>
               </div>
             )}
           </div>
         ) : (
           <>
-            <button type="button" className="black_btn" onClick={handleSignIn}>
+            <button type="button" className="black_btn">
               <Link href="/signin">Sign In</Link>
             </button>
           </>

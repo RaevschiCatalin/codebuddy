@@ -1,7 +1,9 @@
+"use client";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SignIn: React.FC = () => {
   const [signInForm, setSignInForm] = useState({
@@ -13,7 +15,13 @@ const SignIn: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    signInWithEmailAndPassword(signInForm.email, signInForm.password);
+    signInWithEmailAndPassword(signInForm.email, signInForm.password)
+      .then((resp) => {
+        if (resp?.user) {
+          router.replace("/profile");
+        }
+      })
+      .catch((error) => alert(error));
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,8 +31,11 @@ const SignIn: React.FC = () => {
     }));
   };
 
+  const router = useRouter();
+
   return (
     <div>
+      <p>Login</p>
       <form onSubmit={handleSubmit}>
         <input
           required
@@ -33,6 +44,7 @@ const SignIn: React.FC = () => {
           type="Your email..."
           onChange={handleChange}
         />
+        <br />
         <input
           required
           name="password"
@@ -40,12 +52,15 @@ const SignIn: React.FC = () => {
           type="Choose a strong password..."
           onChange={handleChange}
         />
+        <br />
 
-        {fbError && <p>fbError.message</p>}
+        {fbError && <p>{fbError.message}</p>}
 
-        <input type="submit">Sign In</input>
+        <input type="submit" />
       </form>
-      <Link href="/signup"> No account?</Link>
+      <Link href="/signup">
+        <button> No account?</button>
+      </Link>
     </div>
   );
 };

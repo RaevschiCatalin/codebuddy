@@ -1,4 +1,4 @@
-import SignUp from "../../screens/SignIn";
+import SignUp from "../../screens/SignUp";
 
 const page = () => {
   return <SignUp />;
