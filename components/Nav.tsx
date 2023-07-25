@@ -2,14 +2,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signIn, signOut } from 'next-auth/react';
 
 const Nav = () => {
-  const isUserLoggedIn: boolean = true; // Replace this with your actual logic for checking if the user is logged in
+  const isUserLoggedIn: boolean = true; 
   const [toggleDropdown, setToggleDropdown] = useState(false);
-
+  
   const handleSignIn = () => {
-    signIn(); // Call the signIn function when the button is clicked
+    signIn(); 
   };
 
   return (
