@@ -10,16 +10,16 @@ export default function FooterWithLogo() {
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           
           <Footer.LinkGroup>
-            <Footer.Link href="#">
+            <Footer.Link href="/">
               About
             </Footer.Link>
-            <Footer.Link href="#">
+            <Footer.Link href="/">
               Privacy Policy
             </Footer.Link>
-            <Footer.Link href="#">
+            <Footer.Link href="/">
               Licensing
             </Footer.Link>
-            <Footer.Link href="#">
+            <Footer.Link href="/">
               Contact
             </Footer.Link>
           </Footer.LinkGroup>
