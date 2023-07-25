@@ -21,6 +21,7 @@ const Nav = () => {
       <div className="sm:flex hidden">
         {isUserLoggedIn ? (
           <div className="flex gap-3 md:gap-5">
+            
             <Link href="/find-buddy"
             className='black_btn'>
               Get a buddy
@@ -39,6 +40,7 @@ const Nav = () => {
           )}
       </div>
       <div className='sm:hidden flex gap-3 relative'>
+        
             {isUserLoggedIn ? (
               <div className='flex w-full'>
                 <button type='button' onClick={()=>setToggleDropdown((prev)=>!prev)}>
@@ -46,6 +48,10 @@ const Nav = () => {
                 </button>
                 {toggleDropdown && (
                   <div className='dropdown'>
+                     <Link href="/"
+                  className='dropdown_link'>
+                    Home
+                  </Link>
                     <Link 
                     href="/profile"
                     className='dropdown_link'
@@ -56,11 +62,11 @@ const Nav = () => {
                     className='dropdown_link'
                     onClick={()=>setToggleDropdown(false)}>
                       Find a buddy</Link>
-                      <Link 
-                    href="/notifications"
-                    className='dropdown_link'
-                    onClick={()=>setToggleDropdown(false)}>
-                      Notifications</Link>
+                      {/* <Link 
+                    // href="/notifications"
+                    // className='dropdown_link'
+                    // onClick={()=>setToggleDropdown(false)}>
+                    //   Notifications</Link> */}
                     <button 
                     type='button'
                     className='outline_btn  dropdown_link'

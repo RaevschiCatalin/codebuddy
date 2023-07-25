@@ -6,6 +6,9 @@ import Footer from '@components/Footer'
 export const metadata = {
     title: "Coding Buddy",
     descripton: "An app that allows you to find people with same coding prefferences as you.",
+    icons: {
+        icon: '/assets/favicon.ico',
+      },
 }
 
 function RootLayout({children}) {
