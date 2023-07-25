@@ -5,11 +5,11 @@ import Image from 'next/image';
 
 export default function FooterWithLogo() {
   return (
-    <Footer container>
+    <Footer container className='fixed bottom-0'>
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           
-          <Footer.LinkGroup>
+          <Footer.LinkGroup className='gap-7'>
             <Footer.Link href="/">
               About
             </Footer.Link>
