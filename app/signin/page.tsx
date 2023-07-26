@@ -1,11 +1,7 @@
-import React from 'react'
+import SignIn from "../../screens/SignIn";
 
 const page = () => {
-  return (
-    <div>
-      sadasdasfsdgdff
-    </div>
-  )
-}
+  return <SignIn />;
+};
 
-export default page
+export default page;

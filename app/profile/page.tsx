@@ -1,11 +1,7 @@
-import React from 'react'
+import Profile from "../../screens/Profile";
 
 const page = () => {
-  return (
-    <div>
-      dsadasdasda
-    </div>
-  )
-}
+  return <Profile />;
+};
 
-export default page
+export default page;
