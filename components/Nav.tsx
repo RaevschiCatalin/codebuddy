@@ -20,7 +20,7 @@ const Nav = () => {
   });
 
   return (
-    <nav className="flex flex-between w-full mb-16 pt-3">
+    <nav className="flex flex-between w-full pt-3">
       <Link href="/" className="flex gap-2 flex-center">
         <Image
           src="/assets/logo_removed.png"
@@ -28,7 +28,7 @@ const Nav = () => {
           height={33}
           alt="logo"
         />
-        <p className="logo_text">CodingBuddy</p>
+        <p className="logo_text">Coding<span className="lilac_gradient">Buddy</span></p>
       </Link>
 
       {/* desktop */}
