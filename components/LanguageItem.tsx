@@ -1,12 +1,19 @@
 import { useState } from 'react';
 
-interface Language {
-  name: string;
-  iconUrl: string;
-}
+// interface Language {
+//   name: string;
+//   iconUrl: string;
+  
+// }
 
 interface LanguageItemProps {
-  language: Language;
+  key: number;
+  language: {
+    name: string;
+    iconUrl: string;
+  };
+  isSelected: boolean; // Add the isSelected prop here
+  toggleSelection: () => void;
 }
 
 const LanguageItem: React.FC<LanguageItemProps> = ({ language, isSelected, toggleSelection }) => {
