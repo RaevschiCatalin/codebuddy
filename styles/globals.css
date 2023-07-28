@@ -102,6 +102,10 @@
   @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
 }
 
+.gray_gradient_bg {
+  @apply bg-gradient-to-r from-green-300 to-purple-400
+}
+
 .desc {
   @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
 }
@@ -138,7 +142,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+  @apply max-sm:hidden font-satoshi font-extrabold text-lg text-black tracking-wide;
 }
 
 .dropdown {
