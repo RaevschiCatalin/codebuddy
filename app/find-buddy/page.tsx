@@ -4,8 +4,8 @@ import languagesData from '../../data/languages.json';
 import {SetStateAction, useEffect, useState} from 'react';
 import {auth, getAllUsers} from "@firebase";
 import {mockSession} from "@node_modules/next-auth/client/__tests__/helpers/mocks";
-import user = mockSession.user;
 import BuddyCard from '@components/BuddyCard';
+
 const ITEMS_PER_PAGE = 6;
 
 export default function FindBuddy() {
@@ -128,41 +128,17 @@ export default function FindBuddy() {
                 <h1 className="text-xl">Search for buddies</h1>
             </button>
 
-            <div style={{width: "100%", display: "flex", flexDirection: "column", gap: 30, alignItems: "center"}}>
+            <div style={{width: "100%", display: "flex", flexDirection: "row", flexWrap:"wrap", gap: 30, alignItems: "center"}}>
                 {users.filter(u => u.mail != auth.currentUser?.email).map(u => {
                     return (
-                        <div key={users.indexOf(u)} style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "space-evenly",
-                            width: "70%",
-                            backgroundColor: "#624F82",
-                            padding: 10,
-                            alignItems: "center",
-                            borderRadius: 10
-                        }}>
-                            <h1 style={{display: "flex", flexDirection: "row", gap: 15, color:"white"}}
-                                className={"text-2xl font-bold"}>Discord: <h1
-                                className={"blue_gradient"}>{u.username}</h1></h1>
-                            {
-                                u.skills.map((skill: string) => {
-                                    return (
-                                        <div key={u.skills.indexOf(skill)}>
-                                            <img
-                                                className="w-10 h-10 object-contain"
-                                                src={languagesData.filter(l => l.name === skill)[0].iconUrl}
-                                                alt={languagesData.filter(l => l.name === skill)[0].name}
-                                            />
-                                        </div>
-                                    )
-                                })
-                            }
-                            <br/>
-                        </div>
+                        <BuddyCard key={users.indexOf(u)}  username={u.username} skills={u.skills}/>
                     )
                 })}
             </div>
-            <BuddyCard />
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
         </main>
     );
 }
