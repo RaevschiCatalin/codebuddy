@@ -2,6 +2,7 @@
 import LanguageItem from '@components/LanguageItem';
 import languagesData from '../../data/languages.json';
 import { useState } from 'react';
+import BuddyCard from '@components/BuddyCard';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -47,7 +48,7 @@ export default function FindBuddy() {
           You can only choose up to 7 languages. Please remove some selections.
         </div>
       )}
-      <div className="flex justify-center w-full items-center mb-12"> 
+      <div className="flex justify-center w-full items-center "> 
         <button
           onClick={handleScrollLeft}
           disabled={currentPage === 0}
@@ -95,7 +96,7 @@ export default function FindBuddy() {
           </svg>
         </button>
       </div>
-        <p className='text-xl '>Select up to 7 languages that you want your buddies to have</p>
+        <p className='text-xl my-12'>Select up to 7 languages that you want your buddies to have</p>
       {/* Button to send selected languages */}
       <button
   onClick={handleSendSelectedLanguages}
@@ -104,7 +105,7 @@ export default function FindBuddy() {
 >
   <h1 className="text-xl font-bold">Search for buddies</h1>
 </button>
-
+        <BuddyCard />
     </main>
   );
 }
