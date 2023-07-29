@@ -1,26 +1,98 @@
 [
-  { "name": "JavaScript", "iconUrl": "assets/icons/javascript.png" },
-  { "name": "Python", "iconUrl": "assets/icons/python.png" },
-  { "name": "HTML", "iconUrl": "assets/icons/html.png" },
-  { "name": "CSS", "iconUrl": "assets/icons/css.png" },
-  { "name": "React", "iconUrl": "assets/icons/react.svg" },
-  { "name": "Vue.js", "iconUrl": "assets/icons/vue.svg" },
-  { "name": "Angular", "iconUrl": "assets/icons/angular.svg" },
-  { "name": "Node.js", "iconUrl": "assets/icons/node.svg" },
-  { "name": "Java", "iconUrl": "assets/icons/java.png" },
-  { "name": "C#", "iconUrl": "assets/icons/csharp.svg" },
-  { "name": "PHP", "iconUrl": "assets/icons/php.png" },
-  { "name": "Ruby", "iconUrl": "assets/icons/ruby.png" },
-  { "name": "Swift", "iconUrl": "assets/icons/swift.svg" },
-  { "name": "TypeScript", "iconUrl": "assets/icons/typescript.svg" },
-  { "name": "Go", "iconUrl": "assets/icons/go.svg" },
-  { "name": "Kotlin", "iconUrl": "assets/icons/kotlin.svg" },
-  { "name": "Rust", "iconUrl": "assets/icons/rust.svg" },
-  { "name": "C++", "iconUrl": "assets/icons/cpp.svg" },
-  { "name": "R", "iconUrl": "assets/icons/r.svg" },
-  { "name": "SQL", "iconUrl": "assets/icons/mysql.svg" },
-  { "name": "Dart", "iconUrl": "assets/icons/dart.svg" },
-  { "name": "C", "iconUrl": "assets/icons/c.svg" },
-  { "name": "Obj-C", "iconUrl": "assets/icons/objc.svg" },
-  {"name" : "Flutter", "iconUrl" : "assets/icons/flutter.svg"}
+  {
+    "name": "JavaScript",
+    "iconUrl": "assets/icons/javascript.png"
+  },
+  {
+    "name": "Python",
+    "iconUrl": "assets/icons/python.png"
+  },
+  {
+    "name": "HTML",
+    "iconUrl": "assets/icons/html.png"
+  },
+  {
+    "name": "CSS",
+    "iconUrl": "assets/icons/css.png"
+  },
+  {
+    "name": "React",
+    "iconUrl": "assets/icons/react.svg"
+  },
+  {
+    "name": "Vue.js",
+    "iconUrl": "assets/icons/vue.svg"
+  },
+  {
+    "name": "Angular",
+    "iconUrl": "assets/icons/angular.svg"
+  },
+  {
+    "name": "Node.js",
+    "iconUrl": "assets/icons/node.svg"
+  },
+  {
+    "name": "Java",
+    "iconUrl": "assets/icons/java.png"
+  },
+  {
+    "name": "C#",
+    "iconUrl": "assets/icons/csharp.svg"
+  },
+  {
+    "name": "PHP",
+    "iconUrl": "assets/icons/php.png"
+  },
+  {
+    "name": "Ruby",
+    "iconUrl": "assets/icons/ruby.png"
+  },
+  {
+    "name": "Swift",
+    "iconUrl": "assets/icons/swift.svg"
+  },
+  {
+    "name": "TypeScript",
+    "iconUrl": "assets/icons/typescript.svg"
+  },
+  {
+    "name": "Go",
+    "iconUrl": "assets/icons/go.svg"
+  },
+  {
+    "name": "Kotlin",
+    "iconUrl": "assets/icons/kotlin.svg"
+  },
+  {
+    "name": "Rust",
+    "iconUrl": "assets/icons/rust.svg"
+  },
+  {
+    "name": "C++",
+    "iconUrl": "assets/icons/cpp.svg"
+  },
+  {
+    "name": "R",
+    "iconUrl": "assets/icons/r.svg"
+  },
+  {
+    "name": "SQL",
+    "iconUrl": "assets/icons/mysql.svg"
+  },
+  {
+    "name": "Dart",
+    "iconUrl": "assets/icons/dart.svg"
+  },
+  {
+    "name": "C",
+    "iconUrl": "assets/icons/c.svg"
+  },
+  {
+    "name": "Objective-C",
+    "iconUrl": "assets/icons/objc.svg"
+  },
+  {
+    "name": "Flutter",
+    "iconUrl": "assets/icons/flutter.svg"
+  }
 ]
