@@ -21,6 +21,6 @@
   { "name": "SQL", "iconUrl": "assets/icons/mysql.svg" },
   { "name": "Dart", "iconUrl": "assets/icons/dart.svg" },
   { "name": "C", "iconUrl": "assets/icons/c.svg" },
-  { "name": "Objective-C", "iconUrl": "assets/icons/objc.svg" },
+  { "name": "Obj-C", "iconUrl": "assets/icons/objc.svg" },
   {"name" : "Flutter", "iconUrl" : "assets/icons/flutter.svg"}
 ]

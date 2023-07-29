@@ -41,13 +41,13 @@ export default function FindBuddy() {
   const isExceededLanguageLimit = selectedLanguages.length > 7;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between m-6 p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between m-6 py-24 px-0">
       {isExceededLanguageLimit && (
-        <div className="bg-pink-100 border  border-pink-400 text-pink-700 px-4 py-2 rounded-md mb-12">
+        <div className="bg-pink-100 border  border-pink-400 text-pink-700 px-4 py-2  rounded-md mb-12">
           You can only choose up to 7 languages. Please remove some selections.
         </div>
       )}
-      <div className="flex justify-center items-center mb-12"> {/* Add margin-bottom to the div */}
+      <div className="flex justify-center w-full items-center mb-12"> 
         <button
           onClick={handleScrollLeft}
           disabled={currentPage === 0}
@@ -65,7 +65,7 @@ export default function FindBuddy() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <div className="flex flex-wrap gap-4 justify-center text-right">
+        <div className="flex flex-wrap w-full gap-2 justify-center text-right">
           {visibleLanguages.map((language, index) => (
             <LanguageItem
               key={index}
@@ -95,14 +95,14 @@ export default function FindBuddy() {
           </svg>
         </button>
       </div>
-
+        <p className='text-xl '>Select up to 7 languages that you want your buddies to have</p>
       {/* Button to send selected languages */}
       <button
   onClick={handleSendSelectedLanguages}
-  className="black_btn h-20 mb-12 md:mb-72 cursor-pointer" // Use md:mb-24 for medium and large screens
+  className="black_btn h-16 mb-12 md:mb-72 cursor-pointer" 
   disabled={selectedLanguages.length === 0}
 >
-  <h1 className="text-3xl font-bold">Search for buddies</h1>
+  <h1 className="text-xl font-bold">Search for buddies</h1>
 </button>
 
     </main>

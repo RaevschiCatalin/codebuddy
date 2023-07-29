@@ -18,9 +18,9 @@ interface LanguageItemProps {
 
 const LanguageItem: React.FC<LanguageItemProps> = ({ language, isSelected, toggleSelection }) => {
   return (
-    <div className="flex  items-center w-80 h-12 overflow-hidden cursor-pointer rounded-full mb-4">
+    <div className="flex  items-center w-32 h-12 overflow-hidden cursor-pointer rounded-full mb-4">
       <div
-        className={`w-12 h-12 flex justify-center items-center ${
+        className={`w-8 h-8 flex justify-center items-center ${
           isSelected ? 'bg-green-500' : 'bg-gray-200'
         } rounded-full mr-4`}
         onClick={toggleSelection}
@@ -43,7 +43,7 @@ const LanguageItem: React.FC<LanguageItemProps> = ({ language, isSelected, toggl
           />
         )}
       </div>
-      <div className="text-xl" onClick={toggleSelection}>{language.name}</div>
+      <div className=" text-lg " onClick={toggleSelection}>{language.name}</div>
     </div>
   );
 };
