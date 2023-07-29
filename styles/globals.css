@@ -94,12 +94,20 @@
   @apply font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600;
 }
 
+.lilac_gradient_bg{
+  @apply  bg-gradient-to-r from-indigo-300 to-purple-400
+}
+
 .green_gradient {
   @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
 }
 
 .blue_gradient {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600 ;
+}
+
+.gray_gradient_bg {
+  @apply bg-gradient-to-r from-green-300 to-purple-400
 }
 
 .desc {
@@ -138,7 +146,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+  @apply max-sm:hidden font-satoshi font-extrabold text-lg text-black tracking-wide;
 }
 
 .dropdown {
