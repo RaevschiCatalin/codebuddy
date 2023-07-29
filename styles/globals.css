@@ -103,7 +103,7 @@
 }
 
 .blue_gradient {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 ;
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600  bg-clip-text text-transparent;
 }
 
 .gray_gradient_bg {
