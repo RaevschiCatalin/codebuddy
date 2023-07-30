@@ -36,6 +36,10 @@ const Profile = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const totalLanguages = languagesData.length;
     const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
+    const [github,setGithub] = useState("");
+    const [linkedin,setLinkedin] = useState("");
+    const [discord,setDiscord] = useState("");
+
 
     const handleScrollLeft = () => {
         setCurrentPage((prevPage) => Math.max(0, prevPage - 1));
@@ -81,7 +85,7 @@ const Profile = () => {
                     <div className="flex flex-col justify-center align-middle ">
                         <h1 className="text-3xl m-6 text-center font-bold">Here you can see your selected skills:</h1>
                         <br/>
-                        <div style={{display: "flex", flexDirection: "row", gap: 30}}>
+                        <div className="flex flex-row gap-6 justify-center">
                             {user.skills.map(s => {
                                 return (
                                     <div key={user.skills.indexOf(s)}
@@ -171,9 +175,28 @@ const Profile = () => {
                         </svg>
                     </button>
                 </div>
-                
             </div>
-            <button className=" self-center w-1/4 mt-12" onClick={handleSignOut}><Link href="/">
+            {/* making an input field for the socials */}
+            <div className=" rounded-md lilac_gradient_bg my-6">
+                <h1 className="text-center mt-6 text-2xl font-bold">Here you can introduce links to your socials</h1>
+                <form action="" className="flex flex-col p-6">
+                    <label htmlFor="github" className="text-xl font-bold">Github</label>
+                    <div className="flex">
+                    <input type="text" className="w-full rounded-lg " placeholder="Github URL" name="github" id="github" value={github} onChange={(e) => setGithub(e.target.value)}/>
+                    <button className="black_btn">Submit</button></div>
+                    <label htmlFor="linkedin" className="text-xl font-bold">Linkedin</label>
+                    <div className="flex">
+                    <input type="text" name="linkedin"  className="w-full rounded-lg" placeholder="LinkedIn URL" id="linkedin" value={linkedin} onChange={(e) => setLinkedin(e.target.value)}/>
+                    <button className="black_btn">Submit</button></div>
+                    <label htmlFor="discord" className="text-xl font-bold">Discord</label>
+                    <div className="flex">
+                    <input type="text" name="discord" className="w-full rounded-lg" id="discord" placeholder="Discord Nickname"  value={discord} onChange={(e) => setDiscord(e.target.value)}/>
+                    <button className="black_btn">Submit</button></div>
+
+                </form>
+            </div>
+
+            <button className="self-center w-1/4 mt-12 mb-24" onClick={handleSignOut}><Link href="/">
                 <Image alt={"logout"} src={require("./icons/logout.png")} height={32} width={32}/>
             </Link></button>
         </div>
