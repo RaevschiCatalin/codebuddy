@@ -61,13 +61,15 @@ export default function Home() {
                 return (
                     <>
                     <div key={index} className='flex justify-center'>
-                        <BuddyCard username={u.username} skills={u.skills} />
+                        <BuddyCard username={u.username} skills={u.skills} linkedin={u.linkedin} github={u.github} discord={u.discord}/>
                     </div>
                     </>
                 );
             })}
             </div>
-
+            <br/>
+            <br/>
+            <br/>
         </main>
 
 

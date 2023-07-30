@@ -89,28 +89,30 @@ export default function FindBuddy() {
                     </svg>
                 </button>
                 <div className="flex flex-wrap gap-2 justify-center text-right">
-    <div className="flex flex-wrap md:flex-nowrap"> {/* Use md:flex-nowrap to prevent wrapping on larger screens */}
-      {visibleLanguages.slice(0, 3).map((language, index) => (
-        <LanguageItem
-          key={index}
-          language={language}
-          isSelected={selectedLanguages.includes(language.name)}
-          toggleSelection={() => toggleLanguageSelection(language.name)}
-        />
-      ))}
-    </div>
+                    <div
+                        className="flex flex-wrap md:flex-nowrap"> {/* Use md:flex-nowrap to prevent wrapping on larger screens */}
+                        {visibleLanguages.slice(0, 3).map((language, index) => (
+                            <LanguageItem
+                                key={index}
+                                language={language}
+                                isSelected={selectedLanguages.includes(language.name)}
+                                toggleSelection={() => toggleLanguageSelection(language.name)}
+                            />
+                        ))}
+                    </div>
 
-    <div className="flex flex-wrap md:flex-nowrap mt-2"> {/* Use md:flex-nowrap to prevent wrapping on larger screens */}
-      {visibleLanguages.slice(3, 6).map((language, index) => (
-        <LanguageItem
-          key={index}
-          language={language}
-          isSelected={selectedLanguages.includes(language.name)}
-          toggleSelection={() => toggleLanguageSelection(language.name)}
-        />
-      ))}
-    </div>
-  </div>
+                    <div
+                        className="flex flex-wrap md:flex-nowrap mt-2"> {/* Use md:flex-nowrap to prevent wrapping on larger screens */}
+                        {visibleLanguages.slice(3, 6).map((language, index) => (
+                            <LanguageItem
+                                key={index}
+                                language={language}
+                                isSelected={selectedLanguages.includes(language.name)}
+                                toggleSelection={() => toggleLanguageSelection(language.name)}
+                            />
+                        ))}
+                    </div>
+                </div>
                 <button
                     onClick={handleScrollRight}
                     disabled={currentPage === Math.ceil(totalLanguages / ITEMS_PER_PAGE) - 1}
@@ -131,7 +133,7 @@ export default function FindBuddy() {
                     </svg>
                 </button>
             </div>
-            
+
             <h3 className='mb-5 text-xl '>Select up to 7 skills, you want your coding buddy to have</h3>
 
             {/* Button to send selected languages */}
@@ -143,14 +145,15 @@ export default function FindBuddy() {
                 <h1 className="text-xl">Search for buddies</h1>
             </button>
             <div className='grid grid-cols-2 gap-6 justify-center mt-12'>
-           
                 {users.filter(u => u.mail != auth.currentUser?.email).map(u => {
                     return (
-                        <BuddyCard key={users.indexOf(u)}  username={u.username} skills={u.skills}/>
+                        <BuddyCard key={users.indexOf(u)} username={u.username} skills={u.skills} linkedin={u.linkedin} github={u.github} discord={u.discord}/>
                     )
                 })}
             </div>
-           
+            <br/>
+            <br/>
+            <br/>
         </main>
     );
 }
