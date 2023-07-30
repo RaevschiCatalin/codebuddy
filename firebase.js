@@ -30,11 +30,8 @@ const auth = getAuth(app)
 const userCollection = collection(firestore, "Users")
 
 // Updating the user with the id got in the params
-async function addUserId(mail, username, skills, id) {
+async function addUserId(id) {
     await updateDoc(doc(firestore, "Users", id), {
-        username: username,
-        mail: mail,
-        skills: skills,
         id: id,
     })
 }
@@ -45,10 +42,14 @@ async function addNewUser(mail, username) {
         username: username,
         mail: mail,
         skills: [],
+        github: "",
+        linkedin: "",
+        discord: "",
         id: ""
-    }).then(res => addUserId(mail, username, [], res.id))//after we have the user id we update the user with proper id
+    }).then(res => addUserId(res.id))//after we have the user id we update the user with proper id
 
 }
+
 // Get users credentials from firestore
 async function getUser(mail) {
     const user = query(
@@ -60,14 +61,16 @@ async function getUser(mail) {
     const allDocs = querySnapshot.docs
     return allDocs[0].data()
 }
+
 // Update user skills with the skills selected in profile page
-async function  updateUserSkils(id, skills){
+async function updateUserSkils(id, skills) {
     await updateDoc(doc(firestore, "Users", id), {
         skills: skills,
     })
 }
+
 // Get all users
-async function getAllUsers(){
+async function getAllUsers() {
     const users = query(
         collection(firestore, "Users"),
     )
@@ -75,5 +78,15 @@ async function getAllUsers(){
     return querySnapshot.docs
 }
 
+async function updateSocial(id, social, socialLink) {
+    await updateDoc(doc(firestore, "Users", id), social === "linkedin" ? {
+        linkedin: socialLink
+    } : social === "github" ? {
+        github: socialLink
+    } : {
+        discord: socialLink
+    })
+}
+
 // Expose the instances we'll need
-export {app, firestore, auth, addNewUser, getUser, updateUserSkils, getAllUsers}
+export {app, firestore, auth, addNewUser, getUser, updateUserSkils, getAllUsers, updateSocial}

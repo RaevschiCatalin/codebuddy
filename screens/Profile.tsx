@@ -1,5 +1,5 @@
 "use client";
-import {auth, updateUserSkils} from "@firebase"
+import {auth, updateSocial, updateUserSkils} from "@firebase"
 import {signOut} from "firebase/auth"
 import Link from "next/link";
 import LanguageItem from '@components/LanguageItem';
@@ -15,7 +15,10 @@ const Profile = () => {
         id: "",
         mail: "",
         skills: [],
-        username: ""
+        username: "",
+        linkedin: "",
+        github: "",
+        discord: ""
     })
 
     useEffect(() => {
@@ -36,9 +39,9 @@ const Profile = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const totalLanguages = languagesData.length;
     const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
-    const [github,setGithub] = useState("");
-    const [linkedin,setLinkedin] = useState("");
-    const [discord,setDiscord] = useState("");
+    const [github, setGithub] = useState("");
+    const [linkedin, setLinkedin] = useState("");
+    const [discord, setDiscord] = useState("");
 
 
     const handleScrollLeft = () => {
@@ -79,7 +82,8 @@ const Profile = () => {
 
     return (
         <div className="flex flex-col justify-center w-full align-middle mt-6">
-            <h1 className=" text-4xl font-extrabold text-center mb-12 ">Hello, <span className="purple_gradient">{user.username}</span>!</h1>
+            <h1 className=" text-4xl font-extrabold text-center mb-12 ">Hello, <span
+                className="purple_gradient">{user.username}</span>!</h1>
             {
                 user.skills.length !== 0 ?
                     <div className="flex flex-col justify-center align-middle ">
@@ -95,7 +99,8 @@ const Profile = () => {
                                             src={languagesData.filter(l => l.name === s)[0].iconUrl}
                                             alt={languagesData.filter(l => l.name === s)[0].name}
                                         />
-                                        <div className="lilac_gradient mb-6 text-2xl">{languagesData.filter(l => l.name === s)[0].name}</div>
+                                        <div
+                                            className="lilac_gradient mb-6 text-2xl">{languagesData.filter(l => l.name === s)[0].name}</div>
 
                                     </div>
                                 )
@@ -115,7 +120,7 @@ const Profile = () => {
                 )
             }
 
-            <div className="flex flex-col rounded-md gray_gradient_bg align-middle " >
+            <div className="flex flex-col rounded-md gray_gradient_bg align-middle ">
                 <button
                     onClick={() => {
                         if (window.confirm("Edit your skills?")) {
@@ -179,26 +184,57 @@ const Profile = () => {
             {/* making an input field for the socials */}
             <div className=" rounded-md lilac_gradient_bg my-6">
                 <h1 className="text-center mt-6 text-2xl font-bold">Here you can introduce links to your socials</h1>
-                <form action="" className="flex flex-col p-6">
-                    <label htmlFor="github" className="text-xl font-bold">Github</label>
+                <div className="flex flex-col p-6">
+                    <label htmlFor="github" className="text-xl font-bold">Github <a className={"blue_gradient"}
+                                                                                    href={user.github ? user.github : "#"}
+                                                                                    target={"#"}>{user.github ? user.github : ""}</a></label>
                     <div className="flex">
-                    <input type="text" className="w-full rounded-lg " placeholder="Github URL" name="github" id="github" value={github} onChange={(e) => setGithub(e.target.value)}/>
-                    <button className="black_btn">Submit</button></div>
-                    <label htmlFor="linkedin" className="text-xl font-bold">Linkedin</label>
+                        <input type="text" className="w-full rounded-lg " placeholder="Github URL" name="github"
+                               id="github" value={github} onChange={(e) => setGithub(e.target.value)}/>
+                        <button className="black_btn" onClick={() => {
+                            updateSocial(user.id, "github", github).then(() => {
+                                window.location.reload();
+                            })
+                        }}>Submit
+                        </button>
+                    </div>
+                    <label htmlFor="linkedin" className="text-xl font-bold">Linkedin <a className={"blue_gradient"}
+                                                                                        href={user.linkedin ? user.linkedin : "#"}
+                                                                                        target={"#"}>{user.linkedin ? user.linkedin : ""}</a></label>
                     <div className="flex">
-                    <input type="text" name="linkedin"  className="w-full rounded-lg" placeholder="LinkedIn URL" id="linkedin" value={linkedin} onChange={(e) => setLinkedin(e.target.value)}/>
-                    <button className="black_btn">Submit</button></div>
-                    <label htmlFor="discord" className="text-xl font-bold">Discord</label>
+                        <input type="text" name="linkedin" className="w-full rounded-lg" placeholder="LinkedIn URL"
+                               id="linkedin" value={linkedin} onChange={(e) => setLinkedin(e.target.value)}/>
+                        <button className="black_btn" onClick={() => {
+                            updateSocial(user.id, "linkedin", linkedin).then(() => {
+                                window.location.reload();
+                            })
+                        }}>Submit
+                        </button>
+                    </div>
+                    <label htmlFor="discord" className="text-xl font-bold">Discord <span
+                        className={"blue_gradient"}>{user.discord ? user.discord : ""}</span></label>
                     <div className="flex">
-                    <input type="text" name="discord" className="w-full rounded-lg" id="discord" placeholder="Discord Nickname"  value={discord} onChange={(e) => setDiscord(e.target.value)}/>
-                    <button className="black_btn">Submit</button></div>
+                        <input type="text" name="discord" className="w-full rounded-lg" id="discord"
+                               placeholder="Discord Nickname" value={discord}
+                               onChange={(e) => setDiscord(e.target.value)}/>
+                        <button className="black_btn" onClick={() => {
+                            updateSocial(user.id, "discord", discord).then(() => {
+                                window.location.reload();
+                            })
+                        }}>Submit
+                        </button>
+                    </div>
 
-                </form>
+                </div>
             </div>
 
             <button className="self-center w-1/4 mt-12 mb-24" onClick={handleSignOut}><Link href="/">
                 <Image alt={"logout"} src={require("./icons/logout.png")} height={32} width={32}/>
             </Link></button>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         </div>
     )
 }
