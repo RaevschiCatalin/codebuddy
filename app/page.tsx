@@ -7,12 +7,23 @@ import WelcomeHeader from '@components/WelcomeHeader';
 
 export default function Home() {
 
+    const [user, setUser] = useState({
+        id: "",
+        mail: "",
+        skills: [],
+        username: "",
+        linkedin: "",
+        github: "",
+        discord: ""
+    })
+
     const [displayedUsers, setDisplayedUsers] = useState<any[]>([])
 
     useEffect(() => {
         const getDisplayedUsers = async () => {
             await getUser(auth.currentUser?.email).then(resp => {
                 // @ts-ignore
+                setUser(resp);
                 return resp;
             }).then(response => {
                 getAllUsers().then(resp => {
@@ -51,10 +62,13 @@ export default function Home() {
             
             </div>
             <DisplayLogButton/>
-            <br/><br/> 
-            <h1 className="text-4xl p-6 font-extrabold text-center mb-8 mt-8" style={{lineHeight: 1.1}}>
-                Take a look at those <span className='lilac_gradient'>buddies</span>:
-            </h1>
+            <br/><br/>
+            {
+                auth.currentUser && user.skills.length !== 0 && displayedUsers.length > 1 &&
+                    <h1 className="text-4xl p-6 font-extrabold text-center mb-8 mt-8" style={{lineHeight: 1.1}}>
+                        Take a look at those <span className='lilac_gradient'>buddies</span>:
+                    </h1>
+            }
             <div className='grid grid-cols-2 gap-6 justify-center mt-12'>
            
             {displayedUsers.filter(u => u.mail !== auth.currentUser?.email).map((u, index) => {
