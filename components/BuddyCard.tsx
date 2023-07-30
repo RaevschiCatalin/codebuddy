@@ -14,7 +14,6 @@ function BuddyCard({username, skills, linkedin, github, discord}: { username: st
                 <div className="space-y-2">
                     <div className="flex justify-center items-center flex-col space-y-3 text-lg font-medium leading-6">
                         <h3 className="text-white">{username}</h3>
-                        {/*<p className="text-indigo-300">Web Developer</p>*/}
                         <div className="flex justify-center mt-5 space-x-5">
                             {
                                 skills.map((skill) => {
@@ -42,7 +41,7 @@ function BuddyCard({username, skills, linkedin, github, discord}: { username: st
                                    rel="noopener noreferrer"
                                    className="inline-block text-gray-400"><span
                                     className="sr-only">Discord</span>
-                                    <Image src={discordIcon} className='fill-slate-200' width={20} height={20}></Image>
+                                    <Image src={discordIcon} className='fill-slate-200 w-6 h-6 text-gray-400 hover:text-gray-100' width={20} height={20} alt="image"></Image>
                                 </button>
                             }
                             {
