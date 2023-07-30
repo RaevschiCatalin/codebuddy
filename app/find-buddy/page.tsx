@@ -70,7 +70,7 @@ export default function FindBuddy() {
                     You can only choose up to 7 languages. Please remove some selections.
                 </div>
             )}
-            <div className="flex justify-center items-center mb-12"> {/* Add margin-bottom to the div */}
+            <div className="flex justify-center items-center mt-6 mb-12"> {/* Add margin-bottom to the div */}
                 <button
                     onClick={handleScrollLeft}
                     disabled={currentPage === 0}
@@ -118,11 +118,13 @@ export default function FindBuddy() {
                     </svg>
                 </button>
             </div>
+            
+            <h3 className='mb-5 text-xl '>Select up to 7 skills, you want your coding buddy to have</h3>
 
             {/* Button to send selected languages */}
             <button
                 onClick={handleSendSelectedLanguages}
-                className="black_btn h-10 mb-12 md:mb-72 cursor-pointer" // Use md:mb-24 for medium and large screens
+                className="black_btn h-10 mb-12 md:mb-24 cursor-pointer" // Use md:mb-24 for medium and large screens
                 disabled={selectedLanguages.length === 0}
             >
                 <h1 className="text-xl">Search for buddies</h1>
