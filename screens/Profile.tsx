@@ -74,23 +74,12 @@ const Profile = () => {
 
 
     return (
-        <div style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            width: "100%",
-            alignItems: "center",
-            marginTop: "10%"
-        }}>
-            <h1 className={"text-3xl font-bold"}>Hello, <span className={"text-3xl font-bold purple_gradient"}>{user.username}</span>!</h1>
-            <br/>
-            <br/>
-            <br/>
-
+        <div className="flex flex-col justify-center w-full align-middle mt-6">
+            <h1 className=" text-4xl font-extrabold text-center mb-12 ">Hello, <span className="purple_gradient">{user.username}</span>!</h1>
             {
                 user.skills.length !== 0 ?
-                    <div style={{width: "100%", alignItems: 'center', display: "flex", flexDirection: "column"}}>
-                        <h1 className="text-3xl font-bold">Your skills:</h1>
+                    <div className="flex flex-col justify-center align-middle ">
+                        <h1 className="text-3xl m-6 text-center font-bold">Here you can see your selected skills:</h1>
                         <br/>
                         <div style={{display: "flex", flexDirection: "row", gap: 30}}>
                             {user.skills.map(s => {
@@ -102,7 +91,7 @@ const Profile = () => {
                                             src={languagesData.filter(l => l.name === s)[0].iconUrl}
                                             alt={languagesData.filter(l => l.name === s)[0].name}
                                         />
-                                        <div className="green_gradient text-2xl">{languagesData.filter(l => l.name === s)[0].name}</div>
+                                        <div className="lilac_gradient mb-6 text-2xl">{languagesData.filter(l => l.name === s)[0].name}</div>
 
                                     </div>
                                 )
@@ -114,9 +103,6 @@ const Profile = () => {
 
             }
 
-            <br/>
-            <br/>
-            <br/>
             {
                 isExceededLanguageLimit && (
                     <div className="bg-pink-100 border  border-pink-400 text-pink-700 px-4 py-2 rounded-md mb-12">
@@ -125,14 +111,14 @@ const Profile = () => {
                 )
             }
 
-            <div style={{display:"flex", flexDirection:"column", alignItems:"center", backgroundColor:"#A3C7D6", padding:10, borderRadius:10}}>
+            <div className="flex flex-col rounded-md gray_gradient_bg align-middle " >
                 <button
                     onClick={() => {
                         if (window.confirm("Edit your skills?")) {
                             handleSendSelectedLanguages()
                         }
                     }}
-                    className="black_btn h-10 mb-10 md:mb-10 cursor-pointer" // Use md:mb-24 for medium and large screens
+                    className="black_btn w-1/3 mt-6 self-center mb-12 md:mb-10 cursor-pointer" // Use md:mb-24 for medium and large screens
                     disabled={selectedLanguages.length === 0}
                 >
                     <h1 className="text-xl">Edit your skills</h1>
@@ -185,11 +171,9 @@ const Profile = () => {
                         </svg>
                     </button>
                 </div>
-
+                
             </div>
-
-            <br/>
-            <button onClick={handleSignOut}><Link href="/">
+            <button className=" self-center w-1/4 mt-12" onClick={handleSignOut}><Link href="/">
                 <Image alt={"logout"} src={require("./icons/logout.png")} height={32} width={32}/>
             </Link></button>
         </div>
