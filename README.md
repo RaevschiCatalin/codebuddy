@@ -1,2 +1,16 @@
 # Coding Buddy
-## Visit the website https://codingbuddy.vercel.app/
+
+Do you ever feel lonely when you code? Well, we got you covered. A solution made by programmers for programmers that help everyone interested in pair programming, hackathons, contests, or project building to find suitable people to get the job done. 
+
+Try it for yourself, find people, and start coding: https://codingbuddy.vercel.app/
+
+Tech used:
+
+- Next.js
+- React
+- Firebase
+
+Team:
+
+- Raevschi Catalin : front-end developer
+- Poenaru Iulian : front-end developer
