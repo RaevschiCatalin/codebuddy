@@ -88,16 +88,29 @@ export default function FindBuddy() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/>
                     </svg>
                 </button>
-                <div className="flex flex-wrap gap-4 justify-center text-right">
-                    {visibleLanguages.map((language, index) => (
-                        <LanguageItem
-                            key={index}
-                            language={language}
-                            isSelected={selectedLanguages.includes(language.name)}
-                            toggleSelection={() => toggleLanguageSelection(language.name)}
-                        />
-                    ))}
-                </div>
+                <div className="flex flex-wrap gap-2 justify-center text-right">
+    <div className="flex flex-wrap md:flex-nowrap"> {/* Use md:flex-nowrap to prevent wrapping on larger screens */}
+      {visibleLanguages.slice(0, 3).map((language, index) => (
+        <LanguageItem
+          key={index}
+          language={language}
+          isSelected={selectedLanguages.includes(language.name)}
+          toggleSelection={() => toggleLanguageSelection(language.name)}
+        />
+      ))}
+    </div>
+
+    <div className="flex flex-wrap md:flex-nowrap mt-2"> {/* Use md:flex-nowrap to prevent wrapping on larger screens */}
+      {visibleLanguages.slice(3, 6).map((language, index) => (
+        <LanguageItem
+          key={index}
+          language={language}
+          isSelected={selectedLanguages.includes(language.name)}
+          toggleSelection={() => toggleLanguageSelection(language.name)}
+        />
+      ))}
+    </div>
+  </div>
                 <button
                     onClick={handleScrollRight}
                     disabled={currentPage === Math.ceil(totalLanguages / ITEMS_PER_PAGE) - 1}
@@ -129,18 +142,15 @@ export default function FindBuddy() {
             >
                 <h1 className="text-xl">Search for buddies</h1>
             </button>
-
-            <div style={{width: "100%", display: "flex", flexDirection: "row", flexWrap:"wrap", gap: 30, alignItems: "center"}}>
+            <div className='grid grid-cols-2 gap-6 justify-center mt-12'>
+           
                 {users.filter(u => u.mail != auth.currentUser?.email).map(u => {
                     return (
                         <BuddyCard key={users.indexOf(u)}  username={u.username} skills={u.skills}/>
                     )
                 })}
             </div>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
+           
         </main>
     );
 }
