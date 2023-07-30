@@ -8,6 +8,7 @@ Next directions:
 
 - integrated chat within the app
 - a much more secure and sustainable way of backend interactions because at the moment there are some bugs
+- mobile optimizations
 
 Tech used:
 
