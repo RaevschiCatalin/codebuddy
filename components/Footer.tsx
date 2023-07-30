@@ -1,7 +1,6 @@
-'use client';
-
+"use client"
 import {Footer} from 'flowbite-react';
-import Image from 'next/image';
+
 
 export default function FooterWithLogo() {
     return (

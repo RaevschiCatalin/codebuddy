@@ -1,10 +1,3 @@
-import { useState } from 'react';
-
-// interface Language {
-//   name: string;
-//   iconUrl: string;
-  
-// }
 
 interface LanguageItemProps {
   key: number;
