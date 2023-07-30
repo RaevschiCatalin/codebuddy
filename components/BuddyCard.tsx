@@ -7,7 +7,7 @@ import languagesData from '../data/languages.json';
 // @ts-ignore
 function BuddyCard({username, skills, linkedin, github, discord}: { username: string, skills: [], linkedin: string, github: string, discord: string }) {
     return (
-        <div className="  h-52 w-fullgu px-6 py-6  text-center lilac_gradient_bg rounded-lg lg:mt-0 xl:px-10">
+        <div className=" w-full h-52 w-fullgu px-6 py-6  text-center lilac_gradient_bg rounded-lg lg:mt-0 xl:px-10">
             <div className="space-y-4 xl:space-y-6">
                 <Image className="mx-auto rounded-full " width={36} height={36} src="/assets/user.png"
                        alt="author avatar"/>
