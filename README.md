@@ -29,10 +29,10 @@
 <h1 align="center">Team:</h1>
 <table align="center">
   <tr>
-    <td align="center">Raevschi Catalin: Front-end Developer</td>
+    <td align="center"><a href="https://github.com/RaevschiCatalin">Raevschi Catalin: Front-end Developer</a></td>
   </tr>
   <tr>
-    <td align="center">Poenaru Iulian: Front-end Developer</td>
+    <td align="center"><a href="https://github.com/poenaruiulian">Poenaru Iulian: Front-end Developer</a></td>
   </tr>
 </table>
 
