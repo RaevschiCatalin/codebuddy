@@ -19,17 +19,17 @@ function DisplayLogButton() {
   return (
     <div>
       {isUserLoggedIn ? (
-        <div className="flex gap-3 md:gap-5">
-          <Link href="/find-buddy" className="black_btn font-extrabold  h-20 w-72 mt-4">
+        <div className="flex gap-3 self-center align-middle md:gap-5">
+          <Link href="/find-buddy" className="black_btn font-extrabold  h-20 w-72 ">
             <h1 className="text-2xl">
             Find Cool People
             </h1>
           </Link>
         </div>
       ) : (
-        <div className="flex gap-3 md:gap-5">
+        <div className="flex align-baseline self-center gap-3 md:gap-5">
           <Link href="/signup">
-          <button className="black_btn h-20 w-72 mt-4">
+          <button className="black_btn h-20 w-72">
             <h1 className="text-4xl font-extrabold">Explore</h1>
           </button>
           </Link>
