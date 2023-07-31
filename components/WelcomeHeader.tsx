@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import welcomeMessage from '../data/welcome.json';
 
 function WelcomeHeader() {
+  //generate random number
+  const randomNumber = Math.floor(Math.random() * 10);
   const [typedText, setTypedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
-  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(randomNumber);
 
-  useEffect(() => {
+  useEffect(() => { 
     if (isTyping) {
       const { text, highlightWord } = welcomeMessage.messages[currentMessageIndex];
       let currentCharacterIndex = 0;
@@ -41,24 +43,29 @@ function WelcomeHeader() {
 
   const { text, highlightWord } = welcomeMessage.messages[currentMessageIndex];
 
-  return (
-    <h1 className="text-6xl head_text font-extrabold mb-4 mt-8 text-center" style={{ lineHeight: 1.4 }}>
-      {isTyping ? (
-        <React.Fragment>
-          {typedText.split(' ').map((word, index) => (
-            <React.Fragment key={index}>
-              {index === highlightWord ? (
-                <span className="lilac_gradient">{word} </span>
-              ) : (
-                <span>{word} </span>
-              )}
-            </React.Fragment>
-          ))}
-        </React.Fragment>
-      ) : (<span className="">{text}</span>
-        
-      )}
-    </h1>
+  return(
+      <div className="flex items-start justify-center pt-12 pb-0 min-h-screen">
+        <div className="w-3/4 md:w-2/3">
+          <h1 className="text-6xl head_text font-extrabold my-4 text-center" style={{ lineHeight: 1.4 }}>
+            {isTyping ? (
+                <React.Fragment>
+                  {typedText.split(' ').map((word, index) => (
+                      <React.Fragment key={index}>
+                        {index === highlightWord ? (
+                            <span className="lilac_gradient">{word} </span>
+                        ) : (
+                            <span>{word} </span>
+                        )}
+                      </React.Fragment>
+                  ))}
+                </React.Fragment>
+            ) : (
+                <span className="">{text}</span>
+            )}
+          </h1>
+        </div>
+      </div>
+
   );
 }
 

@@ -55,36 +55,33 @@ export default function Home() {
 
 
     return (
-        <main className="flex flex-col min-h-screen items-center justify-center  p-6">
-            <div className='flex flex-col relative m-6'>
-
-            <WelcomeHeader/>
-            
+        <main className="flex flex-col items-center justify-start min-h-screen ">
+            <div className="w-4/5 md:w-3/4 h-2 mt-12 pb-2 mb-6">
+                <WelcomeHeader />
             </div>
-            <DisplayLogButton/>
-            <br/><br/>
-            {
-                auth.currentUser && user.skills.length !== 0 && displayedUsers.length > 1 &&
-                    <h1 className="text-4xl p-6 font-extrabold text-center mb-8 mt-8" style={{lineHeight: 1.1}}>
-                        Take a look at those <span className='lilac_gradient'>buddies</span>:
-                    </h1>
-            }
-            <div className='grid grid-cols-2 gap-6 justify-center mt-12'>
-           
-            {displayedUsers.filter(u => u.mail !== auth.currentUser?.email).map((u, index) => {
-                return (
-                    <>
-                    <div key={index} className='flex justify-center'>
-                        <BuddyCard username={u.username} skills={u.skills} linkedin={u.linkedin} github={u.github} discord={u.discord}/>
-                    </div>
-                    </>
-                );
-            })}
+            <div className="mt-96 items-center">
+            <DisplayLogButton />
             </div>
-            <br/>
-            <br/>
-            <br/>
+            <div>
+            {auth.currentUser && user.skills.length !== 0 && displayedUsers.length > 1 && (
+                <h1 className="text-2xl p-6 font-extrabold text-center md:text-4xl mb-8 mt-36" style={{ lineHeight: 1.1 }}>
+                    Look what <span className="lilac_gradient">buddies</span> we have found for you! 🤩:
+                </h1>
+            )}
+            </div>
+            <div className="grid grid-cols-2 gap-6 mt-4 mb-24 md:mt-8">
+                {displayedUsers
+                    .filter((u) => u.mail !== auth.currentUser?.email)
+                    .map((u, index) => {
+                        return (
+                            <div key={index} className="flex justify-center">
+                                <BuddyCard username={u.username} skills={u.skills} linkedin={u.linkedin} github={u.github} discord={u.discord} />
+                            </div>
+                        );
+                    })}
+            </div>
         </main>
+
 
 
     )

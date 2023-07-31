@@ -14,13 +14,13 @@ function BuddyCard({username, skills, linkedin, github, discord}: { username: st
                 <div className="space-y-2">
                     <div className="flex justify-center items-center flex-col space-y-3 text-lg font-medium leading-6">
                         <h3 className="text-white">{username}</h3>
-                        <div className="flex justify-center mt-5 space-x-5">
+                        <div className="flex justify-center w-full mt-5 space-x-5">
                             {
                                 skills.map((skill) => {
                                     return (
                                         <div key={skills.indexOf(skill)}>
                                             <img
-                                                className="w-10 h-10 object-contain"
+                                                className="w-full flex-wrap h-10 object-contain"
                                                 src={languagesData.filter(l => l.name === skill)[0].iconUrl}
                                                 alt={languagesData.filter(l => l.name === skill)[0].name}
                                             />

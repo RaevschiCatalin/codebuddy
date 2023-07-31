@@ -127,7 +127,7 @@ const Profile = () => {
                             handleSendSelectedLanguages()
                         }
                     }}
-                    className="black_btn w-1/3 mt-6 self-center mb-12 md:mb-10 cursor-pointer" // Use md:mb-24 for medium and large screens
+                    className="outline_btn w-1/3 mt-6 self-center mb-12 md:mb-10 cursor-pointer" // Use md:mb-24 for medium and large screens
                     disabled={selectedLanguages.length === 0}
                 >
                     <h1 className="text-xl">Edit your skills</h1>
