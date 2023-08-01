@@ -6,8 +6,23 @@
 
 <h2 align="center">Try it for yourself, find people, and start coding: </h2>  
 <h1 align="center"><a href="https://codingbuddy.vercel.app/">Here!</a></h1>
+<br/>
+
+<h1 align="center">Features:</h1>
+<h3 align="center">Dynamically rendered and generated welcome text</h3>
+
+![Welcome gif](./public/assets/welcome.gif)
+<h3 align="center">Profile page where the user can set and edit their info</h3>
 <p align="center">
-  <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=Tech+Stack&align=center&titleAlign=center&fontWeight=bold&lineCount=1&width=700&line1=react%2Creact%2C00e3ff%3Bnext.js%2CNext.js%2Cffffff%3Btailwindcss%2CTailwind%2C6efaff%3Btypescript%2Ctypescript%2C5b6ddd%3Bfirebase%2Cfirebase%2Cff9208%3B" alt="Tech Stack">
+  <img src="./public/assets/ss2.png" alt="Profile">
+</p>
+<h3 align="center">Search page where the user can search for other users based on their skills</h3>
+<p align="center">
+  <img src="./public/assets/ss3.png" alt="Search">
+</p>
+<h3 align="center">If the user is logged in and has set their skills, they will be able to see other users that have the same skills as them directly on the main page</h3>
+<p align="center">
+  <img src="./public/assets/ss4.png" alt="Main">
 </p>
 
 <h1 align="center">Next directions:</h1>
