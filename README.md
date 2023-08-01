@@ -10,8 +10,9 @@
 
 <h1 align="center">Features:</h1>
 <h3 align="center">Dynamically rendered and generated welcome text</h3>
-
-![Welcome gif](./public/assets/welcome.gif)
+<p align="center">
+  <img src="./public/assets/welcome.gif" alt="Welcome">
+</p>
 <h3 align="center">Profile page where the user can set and edit their info</h3>
 <p align="center">
   <img src="./public/assets/ss2.png" alt="Profile">
