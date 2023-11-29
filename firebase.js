@@ -9,13 +9,13 @@ import {addDoc, collection, doc, getDocs, getFirestore, query, updateDoc, where}
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBnfvFdjDA1kHpJM3qjjudeYCiFYrGvjAA",
-    authDomain: "code-buddies-1cb83.firebaseapp.com",
-    projectId: "code-buddies-1cb83",
-    storageBucket: "code-buddies-1cb83.appspot.com",
-    messagingSenderId: "437799520030",
-    appId: "1:437799520030:web:514e4fb16619f0f3f42b0f",
-    measurementId: "G-DK6R1YE55S"
+    apiKey: "AIzaSyD1h9yegSp3_YoJGC__MLQ-ZDFr467KcAI",
+    authDomain: "codingbuddy-ae189.firebaseapp.com",
+    projectId: "codingbuddy-ae189",
+    storageBucket: "codingbuddy-ae189.appspot.com",
+    messagingSenderId: "466983029386",
+    appId: "1:466983029386:web:ac7b930f82eb98c942fb73",
+    measurementId: "G-T13KGTN3XB"
 };
 
 // Initialize Firebase
